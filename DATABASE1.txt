@@ -1,0 +1,51 @@
+--Project: Design a store database
+--Create your own store! Your store should sell one type of things, like clothing or bikes,
+--whatever you want your store to specialize in. You should have a table for all the items in your store,
+--and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items,
+--and use select statements to order your items by price and show at least one statistic about the items.
+
+CREATE TABLE shoes
+(
+size TEXT PRIMARY KEY,
+id INTEGER,
+color TEXT,
+SEX TEXT,
+PRICE INTEGER
+);
+
+INSERT INTO shoes VALUES ("S", 1,"BLUE","M",14);
+
+INSERT INTO shoes VALUES ("XS",2,"BLUE","M",14);
+
+INSERT INTO shoes VALUES ("XXS",3,"BLUE","M",14);
+
+INSERT INTO shoes VALUES ("SM",4,"green","F",10);
+
+INSERT INTO shoes VALUES ("XL",5,"green","F",10);
+
+INSERT INTO shoes VALUES ("XXL",6,"green","F",10);
+
+INSERT INTO shoes VALUES ("LM",7,"yellow","M",98);
+
+INSERT INTO shoes VALUES ("XXXL",8,"yellow","M",98);
+
+INSERT INTO shoes VALUES ("LSM",9,"yellow","M",98);
+
+INSERT INTO shoes VALUES ("MMM",10,"white","F",3);
+
+INSERT INTO shoes VALUES ("SSS",11,"white","F",3);
+
+INSERT INTO shoes VALUES("LLL",12,"white","F",3);
+
+INSERT INTO shoes VALUES ("XSLL",13,"black","F",3);
+
+INSERT INTO shoes VALUES ("XXXS",14,"black","M",7);
+
+INSERT INTO shoes VALUES ("XSL",15,"brown","F",12);
+
+SELECT price, color FROM shoes
+WHERE price >10
+ORDER BY price;
+
+SELECT color, sum(price) from shoes
+GROUP BY color;
